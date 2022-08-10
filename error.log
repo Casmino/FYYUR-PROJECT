@@ -1,0 +1,364 @@
+
+2022-07-28 20:02:02,831 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:436]
+2022-07-28 20:45:52,655 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:436]
+2022-07-28 20:49:25,134 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:436]
+2022-07-29 08:42:17,569 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:433]
+2022-07-29 08:45:15,820 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:433]
+2022-07-29 09:16:41,286 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:428]
+2022-07-30 10:50:02,182 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:428]
+2022-07-30 10:51:13,015 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:428]
+2022-07-30 10:52:47,392 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:428]
+2022-07-30 10:53:21,524 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:428]
+2022-07-30 10:57:00,878 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:428]
+2022-07-30 10:59:01,735 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:428]
+2022-07-30 11:08:43,656 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:426]
+2022-07-30 11:09:27,131 ERROR: Exception on /artists [GET] [in C:\Python310\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3212, in _wrap_pool_connect
+    return fn()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 307, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 767, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 425, in checkout
+    rec = pool._do_get()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 145, in _do_get
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 253, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 368, in __init__
+    self.__connect()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 610, in __connect
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 605, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 584, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "Akele"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py", line 164, in artists
+    artists = db.session.query(Artist).all()
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2712, in all
+    return self._iter().all()
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result = self.session.execute(
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1688, in execute
+    conn = self._connection_for_bind(bind)
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1529, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 747, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3166, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3245, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3215, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2069, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3212, in _wrap_pool_connect
+    return fn()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 307, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 767, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 425, in checkout
+    rec = pool._do_get()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 145, in _do_get
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 253, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 368, in __init__
+    self.__connect()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 610, in __connect
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 605, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 584, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) FATAL:  password authentication failed for user "Akele"
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-07-30 11:09:59,151 ERROR: Exception on /artists [GET] [in C:\Python310\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3212, in _wrap_pool_connect
+    return fn()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 307, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 767, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 425, in checkout
+    rec = pool._do_get()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 145, in _do_get
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 253, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 368, in __init__
+    self.__connect()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 610, in __connect
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 605, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 584, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "Akele"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py", line 164, in artists
+    artists = db.session.query(Artist).all()
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2712, in all
+    return self._iter().all()
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result = self.session.execute(
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1688, in execute
+    conn = self._connection_for_bind(bind)
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1529, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 747, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3166, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3245, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3215, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2069, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3212, in _wrap_pool_connect
+    return fn()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 307, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 767, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 425, in checkout
+    rec = pool._do_get()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 145, in _do_get
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 253, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 368, in __init__
+    self.__connect()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 610, in __connect
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 605, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 584, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) FATAL:  password authentication failed for user "Akele"
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-07-30 11:10:31,510 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:426]
+2022-07-30 11:10:38,994 ERROR: Exception on /artists [GET] [in C:\Python310\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3212, in _wrap_pool_connect
+    return fn()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 307, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 767, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 425, in checkout
+    rec = pool._do_get()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 145, in _do_get
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 253, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 368, in __init__
+    self.__connect()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 610, in __connect
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 605, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 584, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "Akele"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py", line 164, in artists
+    artists = db.session.query(Artist).all()
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2712, in all
+    return self._iter().all()
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result = self.session.execute(
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1688, in execute
+    conn = self._connection_for_bind(bind)
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1529, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "C:\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 747, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3166, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3245, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3215, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2069, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3212, in _wrap_pool_connect
+    return fn()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 307, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 767, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 425, in checkout
+    rec = pool._do_get()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 145, in _do_get
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 253, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 368, in __init__
+    self.__connect()
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 610, in __connect
+    with util.safe_reraise():
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Python310\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 605, in __connect
+    connection = pool._invoke_creator(self)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 584, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "C:\Python310\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) FATAL:  password authentication failed for user "Akele"
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-07-30 11:12:44,918 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:427]
+2022-07-30 12:02:38,215 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:427]
+2022-07-30 12:13:57,391 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:429]
+2022-07-30 13:01:46,829 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:429]
+2022-07-30 13:02:55,404 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:429]
+2022-07-30 13:04:15,650 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:429]
+2022-07-30 13:04:54,814 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:429]
+2022-07-30 13:09:37,966 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:429]
+2022-07-30 13:14:11,904 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:429]
+2022-07-31 16:11:25,444 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:429]
+2022-08-06 19:10:19,969 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:430]
+2022-08-06 19:12:16,436 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:430]
+2022-08-06 19:15:23,820 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:432]
+2022-08-06 19:18:12,906 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:431]
+2022-08-06 19:21:37,371 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:433]
+2022-08-06 19:27:04,310 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:431]
